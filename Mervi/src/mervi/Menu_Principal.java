@@ -5,7 +5,7 @@
 package mervi;
 
 
-import javax.swing.*; //Esto es para la parte grafica, interfaz hoakdjadjalskdjasldkjalksd
+import javax.swing.*; //Esto es para la parte grafica, interfaz
 import java.awt.event.*;// es para los eventos
 import java.awt.*;// hace parte tambn de la parte grafica
 
