@@ -9,35 +9,35 @@ package mervi;
  * @author Valentina Castrillon Gomez- Laura Cristina Marin Velez 
  * Fecha: creada mayo 23/2015
  * esta es la clase se crea el formulario de inicio de sesion 
- */
+ **/
 
 /**
  * Libreria que se ocupa de la parte grafica de la ventana 
- */
+ **/
 import javax.swing.*;
 /**
  * Es para los eventos que ocurren en la clase 
- */
+ **/
 import java.awt.event.*;
 /**
  * Tambien se ocupa de la parte grafica 
- */
+ **/
 import java.awt.*;
-/*
+/**
  * Se crea la clase de incio de sesion con un JFrame(marco) y todos sus elementos
- */
+ **/
 public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListener{
     
     
 /**
  * Codigo para las imagenes
- */
+ **/
 	Icon Ent = new ImageIcon("accept.png"); //Asi se colocan las imagenes
 	Icon Sal = new ImageIcon("nooki.png");
         
         /**
          * se crea el texto del formulario de las ventanas 
-         */
+         **/
 
 
 	JLabel lblUsuario=new JLabel ("Usuario");
@@ -51,7 +51,7 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
         
         /**
          * Se crea el constructor donde se le ponen todas las propiedades a los JLabel, JButton, JTextField...
-         */
+         **/
 
  public Inicio_De_Sesion() {
 
@@ -65,7 +65,7 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
      getContentPane().setLayout(null);
      /**
       * tamaño de la ventana
-      * */
+      **/
      setSize(300,250);
      /**para que no se pueda modificar la ventana
       * 
@@ -81,13 +81,13 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
      setVisible(true);
      /**Para que el formulario se quede en el centro 
       * 
-      */
+      **/
      setLocationRelativeTo(null); 
      
      /**
       * Se crean los JLabel, JTextfield, JPasswordfield, JButton y JComboBox, las coordenas en el Frame y 
       * con que nombre se haran visibles
-      */
+      **/
 
      lblUsuario.setForeground(java.awt.Color.black);
      lblContraseña.setForeground(java.awt.Color.black);
@@ -121,7 +121,7 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
      
      /**
       * Para hacer visibles los objetos 
-      */
+      **/
 
      lblUsuario.setVisible(true);
      lblContraseña.setVisible(true);
@@ -141,7 +141,7 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
 
  /**
   * Se crea el KeyPressed ya que solo se utiliza un solo usuario y contraseña.
-  */
+  **/
 	 public void keyPressed(KeyEvent Even){
 
 	 }
@@ -166,7 +166,7 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
  /**
   * Se asigna un usuario y una contraseña 
   * @param event 
-  */
+  **/
 
 
    public void actionPerformed(ActionEvent event)
@@ -187,7 +187,7 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
    }
 /**
  * Se valida el ingeso del usuario y la contraseña si esta icorrecta o los campos estan vacios 
- */
+ **/
   		public void Ingreso(){
 
 	   		if(txtUsuario.getText().equals("")&&txtContraseña.getText().equals(""))

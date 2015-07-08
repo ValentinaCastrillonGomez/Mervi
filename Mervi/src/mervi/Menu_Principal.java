@@ -9,57 +9,57 @@ package mervi;
  * @author Valentina Castrillon Gomez- Laura Cristina Marin Velez 
  * Fecha: creada mayo 23/2015
  * esta es la clase se crea el formulario de Menu 
- */
+ **/
 
 
 /**
  * Libreria que se ocupa de la parte grafica de la ventana 
- */
+ **/
 import javax.swing.*;
 /**
  * Es para los eventos que ocurren en la clase 
- */
+ **/
 import java.awt.event.*;
 /**
  * Tambien se ocupa de la parte grafica 
- */
+ **/
 import java.awt.*;
 
-/*
+/**
  * Se crea la clase de Menu Principal con un JFrame(marco) y todos sus elementos
- */
+ **/
 
 public class Menu_Principal extends JFrame implements ActionListener{
     /**se crea un label para colocar la imagen
      * 
-     */
+     **/
 	JLabel imagen;
         /**
          * Icono de estilo de la foto
-         */
+         **/
 	Icon Foto; 
         /**
          *  asi se coloca la barra de menu
-         */
+         **/
 	JMenuBar barraMenu= new JMenuBar ();
         /**
          *el nombre que tendra la barra de menu
-         */
+         **/
 	JMenu Interfaces=new JMenu("Menu Principal");
         /**
          * Estos son los items que tendra la lista desplegable de la barra de menu
-         */
+         **/
 	JMenuItem Usuarios, Productos, Proveedores, Clientes , Ventas, Compras ;
 	
 /**
  * codigo para la imagen
- */
+ **/
 
 Icon Gim = new ImageIcon("imagen8.jpg"); 
 
-/**
+       /**
          * Se crea el constructor donde se le ponen todas las propiedades a los JLabel, JButton, JTextField...
-         */
+         **/
 
     public Menu_Principal() { 
 
@@ -109,7 +109,7 @@ Icon Gim = new ImageIcon("imagen8.jpg");
     /**
      * Para cuando el usuaruo presione en el MenuItem Proveedores se vaya a la ventana de proveedores 
      * 
-     */
+     **/
 
     public void actionPerformed(ActionEvent event)
    	{
