@@ -5,20 +5,47 @@
 package mervi;
 
 
+/**
+ *
+ * @author Valentina Castrillon Gomez- Laura Cristina Marin Velez 
+ * Fecha: creada mayo 23/2015
+ * esta es la clase se crea el formulario de proveedores  
+ **/
+
+/**
+ * Libreria que se ocupa de la parte grafica de la ventana 
+ **/
 import javax.swing.*;
+/**
+ * Es para los eventos que ocurren en la clase 
+ **/
 import java.awt.event.*;
+/**
+ * Tambien se ocupa de la parte grafica 
+ **/
 import java.awt.*;
-import javax.swing.table.DefaultTableModel;//libreia de tablas
+import javax.swing.table.DefaultTableModel;
 
-
+/**
+ * Se crea la clase de proveedores  con un JFrame(marco) y todos sus elementos
+ **/
 
 public class Proveedores extends JFrame implements ActionListener,KeyListener{
-//PONEMOS CON LO QUE VAMOS A TRABAJAR
 
-	Icon Ent = new ImageIcon("crear.jpg"); //Asi se colocan las imagenes
+    
+    /**Codigo para las imagenes
+     * 
+     **/
+
+	Icon Ent = new ImageIcon("crear.jpg"); 
 	Icon Bus = new ImageIcon("buscar.jpg"); 
 	Icon Act = new ImageIcon("actualizar.jpg"); 
 	Icon des = new ImageIcon("deshabilitar.jpg");
+        
+        /**
+         * Declarar los objetos de Jlabel, jtextfield, Jpasswordfield, RadioButton  y JComboBox
+         **/
+        
 
 	JLabel lblMensaje,lblTipodeidentificacion, lblNumerodeidentificacion, lblNombre,
 	lblApellido, lblNombredeusuario, lblContraseña, lblTelefono,
@@ -32,11 +59,23 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 	JRadioButton JrMasculino,JrFemenino;
 	ButtonGroup Genero;
 	JButton Crear, Buscar, Actualizar, Eliminar;
-
-	JTable TablaDeportistas; //crear tabla
-	DefaultTableModel dtm; //Modelo tabla
-	JScrollPane tablapanel; //panel para la tabla
-	Object [][] datos = new Object [1][20];//estructura interna de la tabal
+        
+/**
+ * crear tabla
+ */
+	JTable TablaProveedores; 
+        /**
+         *Modelo tabla
+         **/
+	DefaultTableModel dtm; 
+        /**
+         *panel para la tabla
+         */
+	JScrollPane tablapanel; 
+        /**
+         *estructura interna de la tabla
+         */
+	Object [][] datos = new Object [1][20];
 	Object [] Columnas = {"Nombre","Apellido","Numerodeidentificacion","Tipodeidentificacion",
 							 "Nombredeusuario", "Telefono","Celular", "Direccion", "Email", "Genero",
 							  "Barrio", "Estado","Dia", "Mes", "Año","Ocupacion",  "Dia2", "Mes2", "Año2"}; //Numero de columnas
@@ -48,6 +87,10 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 
 
 	JComboBox CoTipodeidentificacion, CoEstado, CoDia, CoMes, CoAño, CoDia2, CoMes2, CoAño2;
+        
+        /**
+         * Se crea el constructor donde se le ponen todas las propiedades a los JLabel, JButton, JTextField...
+         */
 
 	 public Proveedores() {
 	    super("Mercado de Vinos - Proveedores");
@@ -59,9 +102,9 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 	    setLayout(null);
 
 
-		//CREAMOS,DAMOS TAMAÑO Y UBICAMOS LO QUE DEFINIMOS
-
-	   // CREAMOS LOS LABEL
+		/**
+                 * Se crea el tamaño y ubicacion de los JLabel que se declararon 
+                 */
 		Mat= new String	[100] [20];
 
 		lblMensaje= new JLabel("Los campos que contengan * se deben llenar obligatoriamente");
@@ -162,7 +205,9 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 
 
 
-	 // CREAMOS LOS CUADROS DE TEXTO
+	/**
+                 * Se crea el tamaño y ubicacion de los JTextField(cuadros de texto)  que se declararon 
+                 */
 
 	 	txtNumerodeidentificacion = new JTextField();
 	    txtNumerodeidentificacion.setBounds(170,80,200,25);
@@ -212,8 +257,10 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 
 
 
-
-		// SE CREAN LOS RADIO BUTTON
+            /**
+             * Se Crean los JRadioButton 
+             */
+		
 
 	    JrMasculino = new JRadioButton("Hombre");
 	    JrMasculino.setBounds(500,80,70,25);
@@ -233,11 +280,13 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 
 
 
-	    //SE CREAN LAS LISTAS DESPEGABLES
+	    /**
+            * Se crean las listas desplegables, con su ubicacion  y tamaño 
+            */
 
 	    CoTipodeidentificacion = new JComboBox();
 	    CoTipodeidentificacion.setBounds(170,110,120,25);
-	    CoTipodeidentificacion.addItem("TI");
+	    
 	    CoTipodeidentificacion.addItem("CC");
 	    getContentPane().add(CoTipodeidentificacion);
 
@@ -299,7 +348,9 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 		    LlenarAños();
 
 
-	    //CREAMOS LOS BOTONES
+	    /**
+             * se cran los botones con sus dimensiones y ubicacion en la ventana 
+             */
 		Crear= new JButton(Ent);
 		Crear.setText("Crear");
 		Crear.setBounds(100,500,120,30);//x,y,ancho,largo
@@ -328,10 +379,10 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 		Eliminar.setEnabled(false);
 
 		dtm = new DefaultTableModel(datos,Columnas);// forma de la tabla
-		TablaDeportistas = new JTable(dtm); // indican el modelo de la tabla
-		tablapanel = new JScrollPane(TablaDeportistas);
+		TablaProveedores = new JTable(dtm); // indican el modelo de la tabla
+		tablapanel = new JScrollPane(TablaProveedores);
 
-		TablaDeportistas. setModel(dtm);
+		TablaProveedores. setModel(dtm);
 		tablapanel.setBounds(10,310,1200,300);
 		tablapanel.setVisible(true);
 		tablapanel.setEnabled(false);
@@ -369,6 +420,9 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 					JOptionPane.showMessageDialog(null,"Ya existe el usuario");
 				}else{
 
+                                    /**
+                                     * Ubicacion de los datos en la Matriz 
+                                     */
 
 
 			Mat[i][0]=txtNombre.getText();
@@ -397,7 +451,9 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 			numReg++;
 			i++;
 
-
+                        /*
+                         * Limpiar los cuadros de texto al guardar la informacion en la matriz 
+                         */
 			Limpiar();
 			JOptionPane.showMessageDialog(this,"Datos Guardados con exito");
 
@@ -405,6 +461,9 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 			Crear.setEnabled(true);
 			}	}
 		}
+                /**
+                 * Boton Buscar 
+                 */
 
 		if(event.getSource()==Buscar){ 
 			Buscar();
@@ -417,27 +476,36 @@ public class Proveedores extends JFrame implements ActionListener,KeyListener{
 				Eliminar.setEnabled(false);
 				Actualizar.setEnabled(false);
 			}
+                        /**
+                         * Boton Actualizar 
+                         */
 
 		    if(event.getSource()==Actualizar) //comienza actualizar
 	{
 	if(Verificar())
 	{
 			int i=VerificarFila();
+                        
+                        
 
+/*
+ * la tabla de proveedores y los set 
+ */
+            TablaProveedores.setValueAt(txtNombre.getText(),i,0);
+            TablaProveedores.setValueAt(txtApellido.getText(),i,1);
+            TablaProveedores.setValueAt(txtNumerodeidentificacion.getText(),i,2);
+            TablaProveedores.setValueAt(CoTipodeidentificacion.getSelectedItem(),i,3);
+            TablaProveedores.setValueAt(txtTelefono.getText(),i,4);
+           TablaProveedores.setValueAt(txtCelular.getText(),i,5);
+            TablaProveedores.setValueAt(txtDireccion.getText(),i,6);
+            TablaProveedores.setValueAt(txtEmail.getText(),i,7);
+	        TablaProveedores.setValueAt(txtBarrio.getText(),i,9);
+	        TablaProveedores.setValueAt(CoEstado.getSelectedItem(),i,10);
+	        TablaProveedores.setValueAt(txtOcupacion.getText(),i,14);
 
-            TablaDeportistas.setValueAt(txtNombre.getText(),i,0);
-            TablaDeportistas.setValueAt(txtApellido.getText(),i,1);
-            TablaDeportistas.setValueAt(txtNumerodeidentificacion.getText(),i,2);
-            TablaDeportistas.setValueAt(CoTipodeidentificacion.getSelectedItem(),i,3);
-            TablaDeportistas.setValueAt(txtTelefono.getText(),i,4);
-            TablaDeportistas.setValueAt(txtCelular.getText(),i,5);
-            TablaDeportistas.setValueAt(txtDireccion.getText(),i,6);
-            TablaDeportistas.setValueAt(txtEmail.getText(),i,7);
-	        TablaDeportistas.setValueAt(txtBarrio.getText(),i,9);
-	        TablaDeportistas.setValueAt(CoEstado.getSelectedItem(),i,10);
-	        TablaDeportistas.setValueAt(txtOcupacion.getText(),i,14);
-
-
+/**
+ * si se guardan corretamente se muestra el mensaje 
+ */
 
 
 	JOptionPane.showMessageDialog(null,"Los datos se han modificado sactisfactoriamente");
@@ -476,11 +544,15 @@ else
    		for (k = 0; k<19; k++) {
    			datos[j][k]= mat[j][k];
    			dtm = new DefaultTableModel(datos,Columnas);
-   			TablaDeportistas.setModel(dtm);
+   			TablaProveedores.setModel(dtm);
    		}
    		}
 
    	}
+        /**
+         * Para validar si se ingresan letras o numeros 
+         * @param e 
+         */
 
    	public void keyTyped(KeyEvent e) {
         //System.out.println("tiped");
@@ -543,26 +615,28 @@ else
     }
 
    	public static void main (String[] args) {
-   		Proveedores Pv = new Proveedores();
+   		Proveedores pv = new Proveedores();
 	}
-
+/**
+ * Se busca por el documento de proveedor 
+ */
 	public void Buscar(){ // Aqui empieza el buscar
 		String Doc,Sexo;
 		int z=0;
 		Doc= JOptionPane.showInputDialog("Ingrese el documento a buscar");
-		while(z<TablaDeportistas.getRowCount() && !TablaDeportistas.getValueAt(z,2).toString().equals(Doc)){
+		while(z<TablaProveedores.getRowCount() && !TablaProveedores.getValueAt(z,2).toString().equals(Doc)){
 			z++;
 		}
 		if(z<i){
-			txtNombre.setText(TablaDeportistas.getValueAt(z,0).toString());
-			txtApellido.setText(TablaDeportistas.getValueAt(z,1).toString());
-			txtNumerodeidentificacion.setText(TablaDeportistas.getValueAt(z,2).toString());
-			CoTipodeidentificacion.setSelectedItem(TablaDeportistas.getValueAt(z,3).toString());
-			txtNombredeusuario.setText(TablaDeportistas.getValueAt(z,4).toString());
-			txtTelefono.setText(TablaDeportistas.getValueAt(z,5).toString());
+			txtNombre.setText(TablaProveedores.getValueAt(z,0).toString());
+			txtApellido.setText(TablaProveedores.getValueAt(z,1).toString());
+			txtNumerodeidentificacion.setText(TablaProveedores.getValueAt(z,2).toString());
+			CoTipodeidentificacion.setSelectedItem(TablaProveedores.getValueAt(z,3).toString());
+			txtNombredeusuario.setText(TablaProveedores.getValueAt(z,4).toString());
+			txtTelefono.setText(TablaProveedores.getValueAt(z,5).toString());
 
-			txtCelular.setText(TablaDeportistas.getValueAt(z,6).toString());
-			txtDireccion.setText(TablaDeportistas.getValueAt(z,7).toString());//ESTTO ES ESTO
+			txtCelular.setText(TablaProveedores.getValueAt(z,6).toString());
+			txtDireccion.setText(TablaProveedores.getValueAt(z,7).toString());//ESTTO ES ESTO
 			txtEmail.setText(Mat[z][8]);//TERMINAR DE HACER ESTO
 			txtBarrio.setText(Mat[z][10]);
 
@@ -624,9 +698,9 @@ else
 	}
 
 	public void eliminar(){ // Este es el deshabilitar
-		for(int w=0;w<TablaDeportistas.getRowCount();w++)
+		for(int w=0;w<TablaProveedores.getRowCount();w++)
   				{
-  					if(TablaDeportistas.getValueAt(w,2).toString().equals(txtNumerodeidentificacion.getText()))
+  					if(TablaProveedores.getValueAt(w,2).toString().equals(txtNumerodeidentificacion.getText()))
   					{
   						dtm.removeRow(w);
   					}

@@ -4,14 +4,40 @@
  */
 package mervi;
 
+/**
+ *
+ * @author Valentina Castrillon Gomez- Laura Cristina Marin Velez 
+ * Fecha: creada mayo 23/2015
+ * esta es la clase se crea el formulario de inicio de sesion 
+ */
 
+/**
+ * Libreria que se ocupa de la parte grafica de la ventana 
+ */
 import javax.swing.*;
+/**
+ * Es para los eventos que ocurren en la clase 
+ */
 import java.awt.event.*;
+/**
+ * Tambien se ocupa de la parte grafica 
+ */
 import java.awt.*;
+/*
+ * Se crea la clase de incio de sesion con un JFrame(marco) y todos sus elementos
+ */
 public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListener{
-
+    
+    
+/**
+ * Codigo para las imagenes
+ */
 	Icon Ent = new ImageIcon("accept.png"); //Asi se colocan las imagenes
 	Icon Sal = new ImageIcon("nooki.png");
+        
+        /**
+         * se crea el texto del formulario de las ventanas 
+         */
 
 
 	JLabel lblUsuario=new JLabel ("Usuario");
@@ -22,21 +48,51 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
 
 	JButton btnSalir=new JButton(Sal);
 	JButton btnAceptar=new JButton(Ent);
+        
+        /**
+         * Se crea el constructor donde se le ponen todas las propiedades a los JLabel, JButton, JTextField...
+         */
 
  public Inicio_De_Sesion() {
 
-     super("**Mercado de Vinos  - Inicio de sesión**");//Nombre que se la a la ventana
-     getContentPane().setLayout(null);//para obtener todo lo que hay en la ventana
-     setSize(300,250);//tamaño de la ventana
-     setResizable(false);// para que no se pueda modificar la ventana
-     setBackground(Color.white);//Coloco fondo ala ventana
-     setVisible(true); //Con esta opcion hago visible la ventana
-     setLocationRelativeTo(null); // preguntar a sebas, quede en el centro
+     /**
+      * Nombre que se le da a la ventana 
+      **/
+     setTitle("Mercado de Vinos  - Inicio de sesión**");
+     /**
+      * para obtener todo lo que hay en la ventana 
+      **/
+     getContentPane().setLayout(null);
+     /**
+      * tamaño de la ventana
+      * */
+     setSize(300,250);
+     /**para que no se pueda modificar la ventana
+      * 
+      **/
+     setResizable(false);
+     /**Coloco fondo ala ventana
+      * 
+      **/
+     setBackground(Color.white);
+      /**
+       * Con esta opcion hago visible la ventana
+       **/
+     setVisible(true);
+     /**Para que el formulario se quede en el centro 
+      * 
+      */
+     setLocationRelativeTo(null); 
+     
+     /**
+      * Se crean los JLabel, JTextfield, JPasswordfield, JButton y JComboBox, las coordenas en el Frame y 
+      * con que nombre se haran visibles
+      */
 
      lblUsuario.setForeground(java.awt.Color.black);
      lblContraseña.setForeground(java.awt.Color.black);
 
-	 lblUsuario.setBounds(30,30,100,20);
+     lblUsuario.setBounds(30,30,100,20);
      txtUsuario.setBounds(100,30,100,30);
      txtUsuario.addKeyListener(this);
 
@@ -51,13 +107,21 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
 
 	 btnSalir.setText("Salir");
 	 btnAceptar.setText("Aceptar");
-
+         
+         
+/**
+ * Para addcionar los objetos al formulario
+ **/
      this.getContentPane().add(lblUsuario);
      this.getContentPane().add(lblContraseña);
      this.getContentPane().add(txtUsuario);
      this.getContentPane().add(txtContraseña);
      this.getContentPane().add(btnSalir);
      this.getContentPane().add(btnAceptar);
+     
+     /**
+      * Para hacer visibles los objetos 
+      */
 
      lblUsuario.setVisible(true);
      lblContraseña.setVisible(true);
@@ -75,6 +139,9 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
 
  		}
 
+ /**
+  * Se crea el KeyPressed ya que solo se utiliza un solo usuario y contraseña.
+  */
 	 public void keyPressed(KeyEvent Even){
 
 	 }
@@ -95,6 +162,11 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
  public void keyReleased(KeyEvent Even){
 
  }
+ 
+ /**
+  * Se asigna un usuario y una contraseña 
+  * @param event 
+  */
 
 
    public void actionPerformed(ActionEvent event)
@@ -113,7 +185,9 @@ public class Inicio_De_Sesion extends JFrame implements ActionListener,KeyListen
    				Ingreso();
   			}
    }
-
+/**
+ * Se valida el ingeso del usuario y la contraseña si esta icorrecta o los campos estan vacios 
+ */
   		public void Ingreso(){
 
 	   		if(txtUsuario.getText().equals("")&&txtContraseña.getText().equals(""))

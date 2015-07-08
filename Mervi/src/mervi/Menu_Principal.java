@@ -4,26 +4,67 @@
  */
 package mervi;
 
+/**
+ *
+ * @author Valentina Castrillon Gomez- Laura Cristina Marin Velez 
+ * Fecha: creada mayo 23/2015
+ * esta es la clase se crea el formulario de Menu 
+ */
 
-import javax.swing.*; //Esto es para la parte grafica, interfaz hoakdjadjalskdjasldkjalksd
-import java.awt.event.*;// es para los eventos
-import java.awt.*;// hace parte tambn de la parte grafica
+
+/**
+ * Libreria que se ocupa de la parte grafica de la ventana 
+ */
+import javax.swing.*;
+/**
+ * Es para los eventos que ocurren en la clase 
+ */
+import java.awt.event.*;
+/**
+ * Tambien se ocupa de la parte grafica 
+ */
+import java.awt.*;
+
+/*
+ * Se crea la clase de Menu Principal con un JFrame(marco) y todos sus elementos
+ */
 
 public class Menu_Principal extends JFrame implements ActionListener{
-	JLabel imagen; // se crea un label para colocar la imagen
-	Icon Foto; //imagen
-	JMenuBar barraMenu= new JMenuBar ();// asi se coloca la barra de menu
-	JMenu Interfaces=new JMenu("Menu Principal");// el nombre que tendra la barra de menu
+    /**se crea un label para colocar la imagen
+     * 
+     */
+	JLabel imagen;
+        /**
+         * Icono de estilo de la foto
+         */
+	Icon Foto; 
+        /**
+         *  asi se coloca la barra de menu
+         */
+	JMenuBar barraMenu= new JMenuBar ();
+        /**
+         *el nombre que tendra la barra de menu
+         */
+	JMenu Interfaces=new JMenu("Menu Principal");
+        /**
+         * Estos son los items que tendra la lista desplegable de la barra de menu
+         */
 	JMenuItem Usuarios, Productos, Proveedores, Clientes , Ventas, Compras ;
-	//Estos son los items que tendra la lista desplegable de la barra de menu
+	
+/**
+ * codigo para la imagen
+ */
+
+Icon Gim = new ImageIcon("imagen8.jpg"); 
+
+/**
+         * Se crea el constructor donde se le ponen todas las propiedades a los JLabel, JButton, JTextField...
+         */
+
+    public Menu_Principal() { 
 
 
-Icon Gim = new ImageIcon("imagen8.jpg"); //codigo para la imagen
-
-    public Menu_Principal() { //la clase
-
-
-    super("Mercado de Vinos - Menú Principal");
+    setTitle("Mercado de Vinos - Menú Principal");
     setSize(600,450);
     setResizable(false);
     setBackground(Color.white);
@@ -41,6 +82,10 @@ Icon Gim = new ImageIcon("imagen8.jpg"); //codigo para la imagen
     Ventas= new JMenuItem("Ventas");
     Compras= new JMenuItem("Compras");
     
+    
+ /**
+ * Para addcionar los objetos al formulario
+ **/
 
     Interfaces.add(Usuarios);
     Interfaces.add(Productos);
@@ -60,12 +105,17 @@ Icon Gim = new ImageIcon("imagen8.jpg"); //codigo para la imagen
 
 
     }
+    
+    /**
+     * Para cuando el usuaruo presione en el MenuItem Proveedores se vaya a la ventana de proveedores 
+     * 
+     */
 
     public void actionPerformed(ActionEvent event)
    	{
 
    	if(event.getSource()==Proveedores){
-   		Proveedores Pv = new  Proveedores();
+   		Proveedores pv = new  Proveedores();
 
 
    	}

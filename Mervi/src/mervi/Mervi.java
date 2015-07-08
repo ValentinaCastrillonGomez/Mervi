@@ -6,16 +6,19 @@ package mervi;
 
 /**
  *
- * @author LAURA1
+ * @author Valentina Castrillon Gomez- Laura Cristina Marin Velez 
+ * Fecha: creada mayo 23/2015
+ * esta es la clase se crea un metodo para llamar el incio de sesion 
  */
 public class Mervi {
     
 
 	public static void main (String[] args) {
-	Inicio_De_Sesion Abrir = new Inicio_De_Sesion();
+            /**
+             * Metodo que llama la clase inicio de sesion 
+             */
+	Inicio_De_Sesion abrir = new Inicio_De_Sesion();
 
-//	if(event.getSource()==Pasar){
-   		//Menu_Principal Mp = Abrir  Deportistas();
 
 
 }
